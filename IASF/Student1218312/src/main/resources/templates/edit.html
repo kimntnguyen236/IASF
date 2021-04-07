@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Edit</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3>Account Update</h3>
+        <form th:action="@{/edit}" th:object="${account}" method="POST">
+            <input type="hidden" th:field="*{accountno}"/>
+            <input th:field="*{accountname}"/>
+            <div th:if="${#fields.hasErrors('accountname')}" th:errors="*{accountname}"></div>
+            <input th:field="*{pincode}"/>
+            <div th:if="${#fields.hasErrors('pincode')}" th:errors="*{pincode}"></div>
+            <input th:field="*{balance}"/>
+            <div th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></div>
+            <input type="submit" value="Save"/>
+        </form>
+    </body>
+
+
+</html>

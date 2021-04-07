@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Edit</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3>Country Update</h3>
+        <form th:action="@{/edit}" th:object="${country}" method="POST">
+            <input type="hidden" th:field="*{id}"/>
+            <input th:field="*{countryname}"/>
+            <input th:field="*{population}"/>
+            <input type="submit" value="Save"/>
+        </form>
+    </body>
+
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3>Login</h3>
+        <form th:action="@{/doLogin}" th:object="${employee1}" method="POST">
+            user name: <input th:field="*{id}" placeholder="Enter employee id..."/><br/><br/>
+            password: <input th:field="*{password}" placeholder="Enter password..."/><br/><br/>
+            <input type="submit" value="Login">
+        </form>
+    </body>
+
+</html>

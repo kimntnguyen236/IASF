@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Index Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h4><a th:href="@{/doCreate}">Create new</a></h4>
+        <h4>Search By Name</h4>
+        <form th:action="@{/search}" method="GET">
+            <input type="text" name="accountname" placeholder="Enter keyword..."/> 
+            <input type="submit" value="Search"/>
+        </form>
+<!--        <h4>Search By Balance</h4>
+        <form th:action="@{/searchByBalance}" method="GET"> 
+            From : <input type="text" name="min" placeholder=""/> 
+            To : <input type="text" name="max" placeholder=""/> 
+            <input type="submit" value="Search"/>
+        </form>-->
+        <h3>Account List</h3>
+        <table th:border="1">
+            <tr th:bgcolor="red">
+                <th>Account No</th>
+                <th>Account Name</th>
+                <th>Balance</th>
+            </tr>
+            <tr th:each="c : ${list}">
+                <td th:text="${c.getAccountno()}"></td>
+                <td th:text="${c.getAccountname()}"></td>
+                <td th:text="${c.getBalance()}"></td>
+            </tr>
+
+        </table>
+    </body>
+
+</html>

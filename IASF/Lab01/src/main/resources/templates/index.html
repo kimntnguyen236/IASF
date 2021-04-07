@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Index</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h1>Country List</h1>
+        <table th:border="1">
+            <tr>
+                <th>Country Code</th>
+                <th>Country Name</th>
+                <th>Population</th>
+            </tr>
+            <tr th:each="c: ${list}">
+                <td th:text="${c.getId()}"></td>
+                <td th:text="${c.getCountryname()}"></td>
+                <td th:text="${c.getPopulation()}"></td>
+
+            </tr>
+        </table>
+    </body>
+
+</html>

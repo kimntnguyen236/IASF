@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Index Title</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3>View Employees</h3>
+        <table th:border="1">
+            <tr th:bgcolor="red">
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr th:each="c : ${list}">
+                <td th:text="${c.getId()}"></td>
+                <td th:text="${c.getName()}"></td>
+                <td th:text="${c.getAge()}"></td>
+            </tr>
+
+        </table>
+        
+        <h4><a th:href="@{/doCreate}">Insert</a></h4>
+    </body>
+
+</html>

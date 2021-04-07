@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Index Lab2</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <br/><!-- comment -->
+
+        <h2>List of country</h2>
+        <br/>
+        <h4><a th:href="@{/doCreate}">Create new</a></h4>
+        <table th:border="1">
+            <tr>
+                <th>Country ID</th>
+                <th>Country Name</th>
+                <th>Population</th>              
+                <th>Actions</th>
+            </tr>
+            <tr th:each="c: ${list}">
+                <td th:text="${c.getId()}"></td>
+                <td th:text="${c.getCountryname()}"></td>
+                <td th:text="${c.getPopulation()}"></td>
+                <td>
+                    <a th:href="@{/delete/{id}(id=${c.getId()})}">Delete</a>
+                    <a th:href="@{/doEdit/{id}(id=${c.getId()})}">Edit</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>index</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3><a th:href="@{doCreate}">Create new</a></h3>
+        <h2>Product List</h2>
+        <table th:border="1">
+            <tr th:bgcolor="yellow">
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Manufacture Name</th>
+            </tr>
+            <tr th:each="p :${list}">
+                <td th:text="${p.getId()}"></td>
+                <td th:text="${p.getName()}"></td>
+                <td th:text="${p.getPrice()}"></td>
+                <td th:text="${p.getManname()}"></td>
+            </tr>
+        </table>
+    </body>
+
+</html>

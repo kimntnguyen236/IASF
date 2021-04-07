@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>create</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <body>
+        <h3>Create new Account</h3>
+        <form th:action="@{/create}" th:object="${account}" method="Post">
+            <input type="text" id="accountno" th:field="*{accountno}" placeholder="Enter no..."/>
+            <div th:if="${#fields.hasErrors('accountno')}" th:errors="*{accountno}"></div>
+            <input type="text" id="accountname" th:field="*{accountname}" placeholder="Enter name..."/>
+            <div th:if="${#fields.hasErrors('accountname')}" th:errors="*{accountname}"></div>
+            <input id="pincode" th:field="*{pincode}" placeholder="Enter pin..."/>
+            <div th:if="${#fields.hasErrors('pincode')}" th:errors="*{pincode}"></div>
+            <input type="text" id="balance" th:field="*{balance}" placeholder="Enter balance..."/>
+            <div th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}"></div>
+            <input type="submit" value="Create"/>
+        </form>
+    </body>
+
+</html>
